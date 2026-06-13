@@ -322,27 +322,16 @@ body.light .completed-title {
     color: #4ade80;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 650px) {
     .todo-container {
-        padding: 20px 16px; 
+        padding: 20px 16px;
+        margin: 0px 15px;
     }
 
     .title {
         font-size: 28px; 
         margin-bottom: 20px;
     }
-
-  
-    .theme-btn {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
-        border-radius: 50%; 
-    }
-
     
     .task-card {
         padding: 12px 14px;
