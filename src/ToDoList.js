@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./List.css";
 import Swal from "sweetalert2";
 import { FaEdit, FaTrash, FaCheck } from "react-icons/fa";
-
 export default function Todolist() {
   var TasksArr = [];
   const [task, setTask] = useState("");
@@ -79,7 +78,7 @@ export default function Todolist() {
     });
   }
 
-  //   functions Of Program
+  //  functions Of Program
   function handleInputChange(event) {
     setTask(event.target.value);
   }
@@ -227,29 +226,29 @@ export default function Todolist() {
 
   return (
     <div className="todo-container">
-      <h2 className="title">My Tasks</h2>
+      <div className="todo-container-header">
+        <h2 className="title">My Tasks</h2>
 
-      <div className="input-box">
-        <input
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              addNewTask();
-            }
-          }}
-          value={task}
-          onChange={handleInputChange}
-          placeholder="Add your next challenge..."
-          className="task-input"
-        />
+        <div className="input-box">
+          <input
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                addNewTask();
+              }
+            }}
+            value={task}
+            onChange={handleInputChange}
+            placeholder="Add your next challenge..."
+            className="task-input"
+          />
 
-        <button onClick={addNewTask} className="add-btn">
-          Add Task
-        </button>
+          <button onClick={addNewTask} className="add-btn">
+            Add Task
+          </button>
+        </div>
       </div>
-
       <div className="tasks-list">{currentTask}</div>
-
       <div className="completed-section">
         <div className="completed-sectio-header">
           <h2 className="completed-title">Completed Tasks</h2>
@@ -269,13 +268,10 @@ export default function Todolist() {
         {completedTasksUI}
       </div>
 
-      <button className="theme-btn" onClick={toggleTheme}>
-        {theme === "light" ? "🌙" : "☀️"}
-      </button>
       <div className="footer-link-container">
-        <a href="https://ahmedwalid96.netlify.app/" className="footer-link">
-          Explore More
-        </a>
+          <button className="theme-btn" onClick={toggleTheme}>
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
       </div>
     </div>
   );
