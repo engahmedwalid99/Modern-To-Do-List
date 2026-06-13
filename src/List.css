@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background: #090d16;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+/* Dark & Light Themes Base */
+body.light {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Container */
+.todo-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+body.light .todo-container {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* Title */
+.title {
+    font-size: 42px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 35px;
+}
+
+/* Input Box Area */
+.input-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+body.light .task-input {
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    color: #0f172a;
+}
+
+.task-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.add-btn {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    padding: 0 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Tasks List */
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+}
+
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 18px 24px;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+body.light .task-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.task-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.task-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+body.light .task-name {
+    color: #334155;
+}
+
+/* Actions Buttons */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.edit-btn {
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+}
+
+.edit-btn:hover {
+    background: rgba(56, 189, 248, 0.15);
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.2) !important;
+}
+
+.delete-btn:hover {
+    background: rgba(248, 113, 113, 0.15);
+    transform: scale(1.05);
+}
+
+.complete-btn {
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.2) !important;
+}
+
+.complete-btn:hover {
+    background: rgba(74, 222, 128, 0.15);
+    transform: scale(1.05);
+}
+
+/* Completed Section */
+.completed-section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light .completed-section {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.completed-sectio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.completed-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+body.light .completed-title {
+    color: #64748b;
+}
+
+/* Badges & Counter Stats */
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.stat-badge.done {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.stat-badge.pending {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.delete-btn-all {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.delete-btn-all:hover {
+    background: #ef4444;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Completed Cards Layout */
+.completed-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(34, 197, 94, 0.03);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+    padding: 16px 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.completed-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.check-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+}
+
+.completed-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.completed-info span {
+    font-size: 12px;
+    color: #475569;
+}
+
+.completed-badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+}
+
+/* Floating Theme Button */
+.theme-btn {
+    position: fixed;
+    top: 40px;
+    bottom: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    border: none;
+    background: #1e293b;
+    color: #f59e0b;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.light .theme-btn {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+}
+
+.theme-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.footer-link-container {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.footer-link {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+body.light .footer-link {
+    color: #64748b;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-link:hover {
+    color: #6366f1;
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
