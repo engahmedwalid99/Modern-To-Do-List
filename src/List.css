@@ -322,30 +322,129 @@ body.light .completed-title {
     color: #4ade80;
 }
 
+
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px; 
+    bottom: auto; 
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: none;
+    background: #1e293b;
+    color: #f59e0b;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; 
+}
+
+
+.task-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e2e8f0;
+    flex: 1;
+    word-break: break-word;
+    text-align: right;
+}
+
+body.light .task-name {
+    color: #334155;
+}
+
+
 @media (max-width: 650px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
     .todo-container {
-        padding: 20px 16px;
-        margin: 0px 15px;
+        padding: 24px 16px;
+        margin: 60px auto 20px auto; 
+        border-radius: 20px;
     }
 
     .title {
         font-size: 28px; 
-        margin-bottom: 20px;
-    }
-    
-    .task-card {
-        padding: 12px 14px;
-        gap: 10px;
+        margin-bottom: 25px;
     }
 
-    .task-name {
-        font-size: 14px; 
+    
+    .input-box {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .task-input {
+        width: 100%;
+        padding: 14px 16px;
+    }
+
+    .add-btn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 16px;
+    }
+    
+
+    .task-card {
+        padding: 14px;
+        flex-direction: row-reverse; 
+        align-items: center;
+        gap: 12px;
+    }
+
+    
+    .actions {
+        gap: 6px;
     }
 
     .actions button {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    
+    .completed-sectio-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    
+    .completed-card {
+        flex-direction: row-reverse;
+        padding: 12px;
+    }
+
+    .completed-left {
+        flex-direction: row-reverse;
+        gap: 10px;
+        flex: 1;
+    }
+
+    .completed-info h3 {
+        font-size: 14px;
+        text-align: right;
+    }
+
+    .theme-btn {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 }
 
