@@ -18,7 +18,7 @@ body {
     transition: background 0.3s ease;
 }
 
-/* Dark & Light Themes Base */
+
 body.light {
     background: #f1f5f9;
     color: #0f172a;
@@ -197,7 +197,7 @@ body.light .task-name {
     transform: scale(1.05);
 }
 
-/* Completed Section */
+
 .completed-section {
     margin-top: 30px;
     padding-top: 30px;
@@ -225,7 +225,7 @@ body.light .completed-title {
     color: #64748b;
 }
 
-/* Badges & Counter Stats */
+
 .stat-badge {
     display: inline-flex;
     align-items: center;
@@ -269,7 +269,7 @@ body.light .completed-title {
     transform: scale(1.05);
 }
 
-/* Completed Cards Layout */
+
 .completed-card {
     display: flex;
     justify-content: space-between;
@@ -322,7 +322,45 @@ body.light .completed-title {
     color: #4ade80;
 }
 
-/* Floating Theme Button */
+@media (max-width: 767px) {
+    .todo-container {
+        padding: 20px 16px; 
+    }
+
+    .title {
+        font-size: 28px; 
+        margin-bottom: 20px;
+    }
+
+  
+    .theme-btn {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        border-radius: 50%; 
+    }
+
+    
+    .task-card {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .task-name {
+        font-size: 14px; 
+    }
+
+    .actions button {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}
+
+
 .theme-btn {
     position: fixed;
     top: 40px;
